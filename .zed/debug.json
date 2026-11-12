@@ -4,7 +4,7 @@
     "request": "launch",
     "label": "Launch Debugger",
     // if your project has multiple entry points, specify the one to use:
-    "mainClass": "ss.week1.Polygon",
+    "mainClass": "ss.week1.MonthlyPayment",
     //
     // this effectively sets a breakpoint at your program entry:
     "stopOnEntry": true,
