@@ -1,7 +1,6 @@
 package ss.week1;
 
 import java.util.Scanner;
-import java.lang.Math;
 
 public class IncomeTax {
     public static void main(String[] args) {

@@ -10,12 +10,17 @@ public class Hello {
     * @param args command-line arguments; currently unused
     */
     public static void main(String[] args) {
-        System.out.println("What's your name?");
         Scanner input = new Scanner(System.in);
+
+        // User input
+        System.out.println("What's your name?");
         String name = input.nextLine();
         System.out.println("What is your age?");
         int age = input.nextInt();
+
+        // Output
         System.out.println("Hello " + name + ", you are " + age + " years old");
+
         input.close();
     }
 }
