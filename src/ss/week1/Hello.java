@@ -23,4 +23,8 @@ public class Hello {
 
         input.close();
     }
+
+    public static void doSomething() {
+        ;
+    }
 }
