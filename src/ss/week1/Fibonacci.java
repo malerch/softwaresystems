@@ -1,6 +1,7 @@
 package ss.week1;
 
 import java.util.Scanner;
+import java.lang.Math;
 /**
 * Fibonacci class.
 */
@@ -14,11 +15,11 @@ public class Fibonacci {
         Scanner input = new Scanner(System.in);
 
         // User input
-        System.out.println("What's your name?");
-        String name = input.nextLine();
+        System.out.println("Enter the index of the number");
+        int n = input.nextInt();
 
         // Output
-        System.out.println("Hello " + name + ", you are " + age + " years old");
+        System.out.println("Fibonacci number: " + fibonacci(n));
 
         input.close();
     }
@@ -31,6 +32,15 @@ public class Fibonacci {
     */
     public static long fibonacci(int n) {
 
-        return 0;
+        if (n == 0) {
+             return 0;
+        }
+        if (n == 1) {
+            return 1;
+        }
+        // Math.fib(n)
+        long fib = ;
+
+        return fib;
     }
 }
