@@ -7,7 +7,7 @@ import java.lang.Math;
 */
 public class Fibonacci {
     /**
-    * Ask the user for an integer and print the result of fib(n)
+    * Ask the user for an integer and print the result of fib(n).
     *
     * @param args command-line arguments; currently unused
     */
@@ -25,10 +25,10 @@ public class Fibonacci {
     }
 
     /**
-    * Calculates the nth fibonacci Number
+    * Calculates the nth fibonacci Number.
     *
-    * @param n Index of the fibonacci number to be calculated
-    * @return nth fibonacci number
+    * @param n Index of the Fibonacci number to be calculated
+    * @return nth Fibonacci number
     */
     public static long fibonacci(int n) {
 
@@ -38,9 +38,7 @@ public class Fibonacci {
         if (n == 1) {
             return 1;
         }
-        // Math.fib(n)
-        long fib = ;
 
-        return fib;
+        return fibonacci(n-1) + fibonacci(n-2);
     }
 }
