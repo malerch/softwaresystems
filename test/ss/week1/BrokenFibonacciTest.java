@@ -7,14 +7,14 @@ import ss.week1.BrokenFibonacci;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BrokenFibonacciTest {
-    @Test @Disabled
+    @Test
     void fibonacciTestBase() {
         assertEquals(0, BrokenFibonacci.fibonacci(0));
         assertEquals(1, BrokenFibonacci.fibonacci(1));
         assertEquals(1, BrokenFibonacci.fibonacci(2));
     }
 
-    @Test @Disabled
+    @Test
     void fibonacciTestHigher() {
         assertEquals(2, BrokenFibonacci.fibonacci(3));
         assertEquals(3, BrokenFibonacci.fibonacci(4));
