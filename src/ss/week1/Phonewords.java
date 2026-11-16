@@ -1,6 +1,7 @@
 package ss.week1;
 
 import java.util.Scanner;
+
 /**
  * Phonewords class.
  */
@@ -18,7 +19,6 @@ public class Phonewords {
         String word = input.nextLine().toLowerCase();
 
         String digits = "";
-
         for (int i = 0; i < word.length(); i++) {
             switch (word.charAt(i)) {
                 case 'a', 'b', 'c':

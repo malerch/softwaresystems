@@ -2,6 +2,7 @@ package ss.week1;
 
 import java.util.Arrays;
 import java.util.Scanner;
+
 /**
  * SortNumbers class.
  */
@@ -17,6 +18,7 @@ public class SortNumbers {
         // User input
         System.out.println("Please enter some numbers: ");
         String numbers = input.nextLine();
+
         String[] split = numbers.trim().split("\\s+");
         int[] digits = new int[split.length];
         for (int i = 0; i < split.length; i++) {
