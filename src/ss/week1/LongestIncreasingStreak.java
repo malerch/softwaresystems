@@ -1,7 +1,5 @@
 package ss.week1;
 
-import java.lang.Math;
-
 public class LongestIncreasingStreak {
     /**
      * Prints the longest increasing streak for a test array of temperatures.
