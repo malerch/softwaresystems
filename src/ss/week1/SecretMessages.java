@@ -1,11 +1,24 @@
 package ss.week1;
 
+import static java.lang.Character.PARAGRAPH_SEPARATOR;
+import static java.lang.Character.toLowerCase;
+
 /**
  * Two classic ciphers, the Caesar cipher and the Vigenere cipher. Only the
  * letters a to z and A to Z are encrypted, and they keep their case; all
  * other characters stay the same.
  */
 public class SecretMessages {
+    /**
+     * Decrypt a test vigenere ciphertext with the given key and print to the console.
+     *
+     * @param args Commandline arguments (unused)
+     */
+    public static void main(String[] args) {
+        String ciphertext = "Xbeeltn aae zvnrtwqeme!";
+        String key = "java";
+        System.out.println("Plaintext: " + vigenereDecrypt(ciphertext, key));
+    }
     /**
      * Shifts a letter the given number of places further in the alphabet,
      * wrapping around from z to a. The letter keeps its case.
@@ -15,7 +28,13 @@ public class SecretMessages {
      *         letters a to z or A to Z
      */
     public static char shiftLetter(char c, int shift) {
-        return c; // TODO
+        //char lower = toLowerCase(c);
+        if (c >= 'a' && c <= 'z') {
+            return (char) ((c - 'a' + shift) % 26 + 'a');
+        } else if (c >= 'A' && c <= 'Z') {
+            return (char) ((c - 'A' + shift) % 26 + 'A');
+        }
+        return c;
     }
 
     /**
@@ -26,7 +45,12 @@ public class SecretMessages {
      * @return the encrypted text
      */
     public static String caesarEncrypt(String text, int shift) {
-        return null; // TODO
+        char[] plaintext = text.toCharArray();
+        char[] ciphertext = new char[plaintext.length];
+        for (int i = 0; i < plaintext.length; i++) {
+            ciphertext[i] = shiftLetter(plaintext[i], shift);
+        }
+        return new String(ciphertext);
     }
 
     /**
@@ -36,7 +60,7 @@ public class SecretMessages {
      * @return the decrypted text
      */
     public static String caesarDecrypt(String text, int shift) {
-        return null; // TODO
+        return caesarEncrypt(text, 26 - shift);
     }
 
     /**
@@ -49,7 +73,18 @@ public class SecretMessages {
      * @return the encrypted text
      */
     public static String vigenereEncrypt(String text, String key) {
-        return null; // TODO
+        char[] plaintext = text.toCharArray();
+        char[] ciphertext = new char[plaintext.length];
+        int keyIdx = 0;
+        for (int i = 0; i < plaintext.length; i++) {
+            int shift = 0;
+            if (toLowerCase(plaintext[i]) >= 'a' && toLowerCase(plaintext[i]) <= 'z') {
+                shift = (int) (key.charAt(keyIdx % key.length()) - 'a');
+                keyIdx++;
+            }
+            ciphertext[i] = shiftLetter(plaintext[i], shift);
+        }
+        return new String(ciphertext);
     }
 
     /**
@@ -59,6 +94,12 @@ public class SecretMessages {
      * @return the decrypted text
      */
     public static String vigenereDecrypt(String text, String key) {
-        return null; // TODO
+        char[] inverseKey = new char[key.length()];
+
+        for (int i = 0; i < inverseKey.length; i++) {
+            inverseKey[i] = (char) ('a' + (26 - (key.charAt(i) - 'a')));
+        }
+
+        return vigenereEncrypt(text, new String(inverseKey));
     }
 }

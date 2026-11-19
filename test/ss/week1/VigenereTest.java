@@ -29,4 +29,10 @@ public class VigenereTest {
                      SecretMessages.vigenereDecrypt("Lxfopv ef rnhr!", "lemon"));
         assertEquals("xyz", SecretMessages.vigenereDecrypt("abc", "d"));
     }
+
+    @Test
+    void nonalphaTest() {
+        assertEquals("béc",
+                     SecretMessages.vigenereEncrypt("aéa", "bc"));
+    }
 }
