@@ -16,9 +16,9 @@ public class Recursion {
         System.out.println(greatestDigit(48271));
 
         // Tests for 1.25
-        /*System.out.println(isPalindrome(new int[] {1, 2, 3, 2, 1}, 0, 0));
-        System.out.println(isPalindrome(new int[] {5, 4, 4, 5}, 0, 0));
-        System.out.println(isPalindrome(new int[] {1, 2, 3, 4, 5}, 0, 0));*/
+        System.out.println(isPalindrome(new int[] {1, 2, 3, 2, 1}, 0, 4));
+        System.out.println(isPalindrome(new int[] {5, 4, 4, 5}, 0, 3));
+        System.out.println(isPalindrome(new int[] {1, 2, 3, 4, 5}, 0, 4));
 
         // Tests for 1.26
         int[] data = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
@@ -51,7 +51,10 @@ public class Recursion {
      * @return true if arr is a palindrome, false otherwise
      */
     public static boolean isPalindrome(int[] arr, int start, int end) {
-        return false;
+        if (start >= end) {
+            return true;
+        }
+        return arr[start] == arr[end] && isPalindrome(arr, start + 1, end - 1);
     }
 
     /**
