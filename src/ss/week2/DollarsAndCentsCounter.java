@@ -4,7 +4,11 @@ package ss.week2;
  * This class records an amount of money as dollars and cents.
  */
 public class DollarsAndCentsCounter {
+    int cents;
 
+    public DollarsAndCentsCounter() {
+        this.cents = 0;
+    }
     /**
      * Return the number of whole dollars.
      * @return the number of whole dollars
@@ -12,7 +16,7 @@ public class DollarsAndCentsCounter {
     //@ ensures \result >= 0;
     //@ pure
     public int getDollars() {
-        return 0; // TODO: implement
+        return this.cents / 100;
     }
 
     /**
@@ -22,7 +26,7 @@ public class DollarsAndCentsCounter {
     //@ ensures \result >= 0 && \result < 100;
     //@ pure
     public int getCents() {
-        return 0; // TODO: implement
+        return this.cents % 100;
     }
 
     /**
@@ -34,6 +38,7 @@ public class DollarsAndCentsCounter {
           \old(getDollars() * 100 + getCents()) + dollars * 100 + cents;
       @ */
     public void add(int dollars, int cents) {
+        this.cents += (dollars * 100 + cents);
     }
 
     /**
@@ -41,5 +46,6 @@ public class DollarsAndCentsCounter {
      */
     //@ ensures getDollars() == 0 && getCents() == 0;
     public void reset() {
+        this.cents = 0;
     }
 }
