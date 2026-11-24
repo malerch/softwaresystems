@@ -18,7 +18,6 @@ public class DollarsAndCentsCounter {
     public int getDollars() {
         return this.cents / 100;
     }
-
     /**
      * Return the amount of cents.
      * @return the amount of cents
