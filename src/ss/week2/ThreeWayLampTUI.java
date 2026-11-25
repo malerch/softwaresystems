@@ -18,10 +18,27 @@ public class ThreeWayLampTUI {
         this.lamp = new ThreeWayLamp();
     }
 
+    public void commandHelp() {
+        System.out.println(
+                "\nWelcome to the ThreeWayLamp TUI. "
+                + "\nUsage: \n"
+                + "\nOFF: Set the lamp to OFF "
+                + "\nLOW: Set the lamp to LOW "
+                + "\nMEDIUM: Set the lamp to MEDIUM "
+                + "\nHIGH: Set the lamp to HIGH "
+                + "\nSTATE: Print the current setting of the lamp "
+                + "\nNEXT: Change to the next setting, observing the order OFF → LOW → MEDIUM → HIGH → OFF"
+                + "\nHELP: Displays a help message"
+                + "\nEXIT: Exit the ThreeWayLamp TUI"
+        );
+    }
+
     public void run() {
         Scanner input = new Scanner(System.in);
+        boolean exit = false;
+        this.commandHelp();
 
-        while (true) {
+        while (!exit) {
             System.out.print("ThreeWayLampTUI >");
             String next_command = input.nextLine();
             switch (next_command) {
@@ -35,21 +52,12 @@ public class ThreeWayLampTUI {
                     lamp.switchSetting();
                     break;
                 case "HELP":
-                    System.out.println("\nWelcome to the ThreeWayLamp TUI. "
-                                       + "\nUsage: \n"
-                                       + "\nOFF: Set the lamp to OFF "
-                                       + "\nLOW: Set the lamp to LOW "
-                                       + "\nMEDIUM: Set the lamp to MEDIUM "
-                                       + "\nHIGH: Set the lamp to HIGH "
-                                       + "\nSTATE: Print the current setting of the lamp "
-                                       + "\nNEXT: Change to the next setting, observing the order OFF → LOW → MEDIUM → HIGH → OFF"
-                                       + "\nHELP: Displays a help message"
-                                       + "\nEXIT: Exit the ThreeWayLamp TUI"
-                    );
+                    this.commandHelp();
                     break;
                 case "EXIT":
                     System.out.println("Closing the ThreeWayLamp TUI...");
-                    return;
+                    exit = true;
+                    break;
                 default:
                     System.out.println("Unknown command");
             }
