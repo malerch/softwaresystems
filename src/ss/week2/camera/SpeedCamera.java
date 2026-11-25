@@ -5,11 +5,15 @@ package ss.week2.camera;
  */
 public class SpeedCamera {
     public static final int INITIAL_CAPACITY = 4;
+    private int limit;
+    private int[] measurements;
+    private int count;
 
     /**
      * Creates a speed camera with limit 80 km/h.
      */
     public SpeedCamera() {
+        this(80);
     }
 
     /**
@@ -17,6 +21,9 @@ public class SpeedCamera {
      * @param limit speed limit in km/h
      */
     public SpeedCamera(int limit) {
+        this.limit = limit;
+        this.measurements = new int[INITIAL_CAPACITY];
+        this.count = 0;
     }
 
     /**
@@ -49,7 +56,7 @@ public class SpeedCamera {
      * @return total number of measurements
      */
     public int getCount() {
-        return 0;
+        return this.count;
     }
 
     /**
@@ -57,7 +64,7 @@ public class SpeedCamera {
      * @return the speed limit in km/h
      */
     public int getLimit() {
-        return 0;
+        return this.limit;
     }
 
     /**
@@ -66,7 +73,7 @@ public class SpeedCamera {
      * @return the speed at index in km/h
      */
     public int getSpeed(int index) {
-        return 0;
+        return this.measurements[index];
     }
 
     /**
@@ -74,6 +81,8 @@ public class SpeedCamera {
      * @param speed the measured speed
      */
     public void record(int speed) {
+        this.measurements[count] = speed;
+        count++;
     }
 
     /**
