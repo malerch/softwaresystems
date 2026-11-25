@@ -81,8 +81,23 @@ public class SpeedCamera {
      * @param speed the measured speed
      */
     public void record(int speed) {
+        if (count == this.measurements.length) {
+            this.measurements = this.doubleArray(this.measurements);
+        }
         this.measurements[count] = speed;
         count++;
+    }
+
+    /**
+     * Helper method that creates a new array twice as long as the given array and copy its
+     * elements to the new one.
+     * @param arr given array to grow
+     * @return new array with twice the length of arr and the same elements
+     */
+    private int[] doubleArray(int[] arr) {
+        int[] newArr = new int[arr.length * 2];
+        System.arraycopy(arr, 0, newArr, 0, arr.length);
+        return newArr;
     }
 
     /**
