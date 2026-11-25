@@ -8,6 +8,10 @@ import java.util.Scanner;
 public class ThreeWayLampTUI {
     private final ThreeWayLamp lamp;
 
+    /**
+     * Initiates the REPL.
+     * @param args Commandline arguments (unused)
+     */
     public static void main(String[] args) {
         ThreeWayLampTUI tui = new ThreeWayLampTUI();
         tui.run();
@@ -18,6 +22,9 @@ public class ThreeWayLampTUI {
         this.lamp = new ThreeWayLamp();
     }
 
+    /**
+     * Print the TUI help menu to the console.
+     */
     public void commandHelp() {
         System.out.println(
                 "\nWelcome to the ThreeWayLamp TUI. "
@@ -33,6 +40,9 @@ public class ThreeWayLampTUI {
         );
     }
 
+    /**
+     * Main REPL for the TUI; ask the user for an input, execute the respective command, repeat.
+     */
     public void run() {
         Scanner input = new Scanner(System.in);
         boolean exit = false;

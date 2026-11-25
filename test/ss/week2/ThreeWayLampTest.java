@@ -23,11 +23,17 @@ public class ThreeWayLampTest {
         lamp = new ThreeWayLamp();
     }
 
+    /**
+     * Test the constructor and <tt>getSetting()</tt>.
+     */
     @Test
     public void testNewLampOff() {
         assertEquals(ThreeWayLamp.LampSetting.OFF, lamp.getSetting());
     }
 
+    /**
+     * Test the method <tt>switchSetting()</tt>.
+     */
     @Test
     public void testSwitchSequence() {
         lamp.switchSetting();
@@ -40,6 +46,9 @@ public class ThreeWayLampTest {
         assertEquals(ThreeWayLamp.LampSetting.OFF, lamp.getSetting());
     }
 
+    /**
+     * Test the method <tt>changeSetting()</tt>.
+     */
     @Test
     public void testChangeSetting() {
         for (ThreeWayLamp.LampSetting setting : ThreeWayLamp.LampSetting.values()) {
